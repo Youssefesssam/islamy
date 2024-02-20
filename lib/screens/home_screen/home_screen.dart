@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentTapIndex = 0;
-  List <Widget> screen =[Radioo(),Sebha(),Ahadeth(),Quran()];
+  List <Widget> screen =[Quran(),Ahadeth(),Sebha(),Radioo()];
   Widget currentTab =Quran();
   @override
   Widget build(BuildContext context) {
@@ -51,10 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
       data: ThemeData(canvasColor: AppColors.orange),
       child: BottomNavigationBar(
     items: [
-      bottomNavigationBarItem(AppAssets.icRadio,"Radio"),
-      bottomNavigationBarItem(AppAssets.icSebha,"sebha"),
-      bottomNavigationBarItem(AppAssets.icAhadeth,"Ahadeth"),
       bottomNavigationBarItem(AppAssets.icQuran,"Quran"),
+      bottomNavigationBarItem(AppAssets.icAhadeth,"Ahadeth"),
+      bottomNavigationBarItem(AppAssets.icSebha,"sebha"),
+      bottomNavigationBarItem(AppAssets.icRadio,"Radio"),
+
+
+
     ],
         selectedItemColor:AppColors.lightBlack ,
         currentIndex: currentTapIndex,
