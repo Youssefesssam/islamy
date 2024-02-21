@@ -77,7 +77,7 @@ class Sebha extends StatefulWidget {
       count++ ;
           if (count%34==0) {
              i++;
-            if(i==4){i=0;}
+            if(i==azckar.length){i=0;}
             count = 0 ;
           }
       turns += 1/300;

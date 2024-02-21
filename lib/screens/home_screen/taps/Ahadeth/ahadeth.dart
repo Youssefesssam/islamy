@@ -8,7 +8,7 @@ class Ahadeth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: Image.asset(AppAssets.sebhaaLogo))
+
       ],
     );
   }

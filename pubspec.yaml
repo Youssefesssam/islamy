@@ -69,6 +69,8 @@ flutter:
    - assets/quran_tab.png
    - assets/quran.png
    - assets/sebhaa.png
+   - assets/quran/
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

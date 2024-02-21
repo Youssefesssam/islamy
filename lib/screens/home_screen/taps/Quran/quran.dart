@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islamy/model/sura_details_arg.dart';
 import 'package:islamy/utils/app_assets.dart';
 import 'package:islamy/utils/app_colors.dart';
 import 'package:islamy/utils/constant.dart';
 
 import '../../../../utils/app_theme.dart';
+import '../../../sura_detailse/sura_detailse.dart';
 
 class Quran extends StatelessWidget {
   const Quran({super.key});
@@ -52,16 +54,22 @@ class Quran extends StatelessWidget {
                 child: ListView.builder(
                     itemCount: Constant.suraNames.length,
                     itemBuilder:(context,index){
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Expanded(child: Text("${Constant.versesNumber[index]}",
-                            textAlign: TextAlign.center,
-                            style: AppTheme.mediumTitleTextStyle,)),
-                          Expanded(child: Text(Constant.suraNames[index],
-                            textAlign: TextAlign.center,
-                            style: AppTheme.mediumTitleTextStyle,)),
-                        ],
+                      return InkWell(
+                        onTap: (){
+                          SuraDetailseArg argument =SuraDetailseArg(fileName: "${index+1}.txt", suraName: Constant.suraNames[index]);
+                          Navigator.pushNamed(context, SuraDetailse.routename, arguments: argument );
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Expanded(child: Text("${Constant.versesNumber[index]}",
+                              textAlign: TextAlign.center,
+                              style: AppTheme.mediumTitleTextStyle,)),
+                            Expanded(child: Text(Constant.suraNames[index],
+                              textAlign: TextAlign.center,
+                              style: AppTheme.mediumTitleTextStyle,)),
+                          ],
+                        ),
                       );
                     }
                 )
