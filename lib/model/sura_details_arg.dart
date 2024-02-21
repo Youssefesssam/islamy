@@ -1,5 +1,5 @@
-class SuraDetailseArg{
+class screenDetailseArg{
   String fileName;
-  String suraName;
-  SuraDetailseArg({required this.fileName,required this.suraName});
+  String Name;
+  screenDetailseArg({required this.fileName,required this.Name});
 }

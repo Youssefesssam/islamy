@@ -56,7 +56,7 @@ class Quran extends StatelessWidget {
                     itemBuilder:(context,index){
                       return InkWell(
                         onTap: (){
-                          SuraDetailseArg argument =SuraDetailseArg(fileName: "${index+1}.txt", suraName: Constant.suraNames[index]);
+                          screenDetailseArg argument =screenDetailseArg(fileName: "${index+1}.txt", Name: Constant.suraNames[index],);
                           Navigator.pushNamed(context, SuraDetailse.routename, arguments: argument );
                         },
                         child: Row(

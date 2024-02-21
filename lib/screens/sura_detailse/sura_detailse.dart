@@ -17,10 +17,10 @@ class _SuraDetailseState extends State<SuraDetailse> {
 
   @override
   Widget build(BuildContext context) {
-    SuraDetailseArg arg = ModalRoute.of(context)!.settings.arguments as SuraDetailseArg;
+    screenDetailseArg arg = ModalRoute.of(context)!.settings.arguments as screenDetailseArg;
     readSuraFile(arg.fileName);
     return AppScaffold(
-      title:arg.suraName ,
+      title:arg.Name ,
         body:Container(
           margin: EdgeInsets.symmetric(horizontal: 30, 
           vertical: MediaQuery.of(context).size.height*.08),

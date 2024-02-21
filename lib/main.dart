@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:islamy/screens/ahadeth_details/hadeth_details.dart';
 import 'package:islamy/screens/home_screen/home_screen.dart';
 import 'package:islamy/screens/home_screen/taps/sebha/sebha.dart';
 import 'package:islamy/screens/splash_screen/splash_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (_) => HomeScreen(),
         Sebha.routeName: (_) => Sebha(),
         SuraDetailse.routename:(_)=>SuraDetailse(),
+        hadethDetailse.routename:(_)=>hadethDetailse(),
 
       },
       initialRoute: HomeScreen.routeName,
