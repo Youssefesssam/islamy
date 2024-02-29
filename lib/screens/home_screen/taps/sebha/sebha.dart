@@ -57,8 +57,8 @@ class Sebha extends StatefulWidget {
                       color: AppColors.orange,),
                     child: Column(
                       children: [
-                        Text("${azckar[i]}",
-                              style: TextStyle(fontSize: 30,fontWeight: FontWeight.normal),),
+                        Text(azckar[i],
+                              style: const TextStyle(fontSize: 30,fontWeight: FontWeight.normal),),
 
                       ],
                     ),
@@ -74,11 +74,10 @@ class Sebha extends StatefulWidget {
    void Change(){
      setState(() {
       counter++ ;
-      count++ ;
-          if (count%34==0) {
+          if (counter%34==0) {
              i++;
-            if(i==azckar.length){i=0;}
-            count = 0 ;
+             if(i==azckar.length){i=0;}
+
           }
       turns += 1/300;
     });

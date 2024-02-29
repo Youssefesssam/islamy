@@ -1,52 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islamy/model/sura_details_arg.dart';
-import 'package:islamy/utils/app_theme.dart';
+
+
+import '../../model/sura_details_arg.dart';
+import '../../utils/app_theme.dart';
 import '../app_scaffold/app_scaffold.dart';
 
 class SuraDetailse extends StatefulWidget {
+  static const String routeName = "sura_details";
   const SuraDetailse({super.key});
- static String routename ="suradetailse";
 
   @override
-  State<SuraDetailse> createState() => _SuraDetailseState();
+  State<SuraDetailse> createState() => _SuraDetailsState();
 }
 
-class _SuraDetailseState extends State<SuraDetailse> {
-   String fileContent =" ";
+class _SuraDetailsState extends State<SuraDetailse> {
+  String fileContent = "";
+  late ScreenDetailsArgs args;
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    screenDetailseArg arg = ModalRoute.of(context)!.settings.arguments as screenDetailseArg;
-    readSuraFile(arg.fileName);
+    args = ModalRoute.of(context)!.settings.arguments as ScreenDetailsArgs;
+    if(fileContent.isEmpty){
+      readSuraFile();
+    }
     return AppScaffold(
-      title:arg.Name ,
-        body:Container(
-          margin: EdgeInsets.symmetric(horizontal: 30, 
-          vertical: MediaQuery.of(context).size.height*.08),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            color: Colors.white,
-          ),
+      title: args.Name,
+      body: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
+        ),
+        margin: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.height * .07,
+          horizontal: 28,),
 
-          padding: EdgeInsets.all(24),
-          child: SingleChildScrollView(
-            child: Text(fileContent,textDirection:TextDirection.rtl ,
-                style: AppTheme.mediumTitleTextStyle,
-                textAlign: TextAlign.center),
-          ),),
-    );
+        padding: EdgeInsets.all(24),
+        child: SingleChildScrollView(
+          child: Text(fileContent,
+            textAlign: TextAlign.center,
+            textDirection: TextDirection.rtl,
+            style: AppTheme.mediumTitleTextStyle,),
+        ),
+      ),);
   }
 
-  void readSuraFile(String fileName) async
-  {
-   Future<String> futureFileContent =  rootBundle.loadString("assets/quran/$fileName");
-   fileContent = await futureFileContent;
-   List<String> filesLines = fileContent.split("\n");
-   for(int i=1; i < filesLines.length ; i++){
-     filesLines[i] +="{${i+1}}";
-   }
-   fileContent = filesLines.join(" ");
-   setState(() {});
+  Future<void> readSuraFile() async{
+    Future<String> futureFileContent = rootBundle.loadString("assets/quran/${args.fileName}");
+    fileContent = await futureFileContent;
+    print(fileContent);
+    List<String> fileLines = fileContent.split("\n");
+    for(int i = 0; i < fileLines.length; i++){
+      fileLines[i] += "{${i + 1}}";
+    }
+    fileContent = fileLines.join(" ");
+    setState(() {});
   }
 }

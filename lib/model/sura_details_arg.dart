@@ -1,5 +1,5 @@
-class screenDetailseArg{
+class ScreenDetailsArgs{
   String fileName;
   String Name;
-  screenDetailseArg({required this.fileName,required this.Name});
+  ScreenDetailsArgs({required this.fileName,required this.Name});
 }

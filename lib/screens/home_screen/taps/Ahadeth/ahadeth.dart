@@ -5,8 +5,7 @@ import 'package:islamy/utils/app_assets.dart';
 import '../../../../model/sura_details_arg.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_theme.dart';
-import '../../../../utils/constant.dart';
-import '../../../sura_detailse/sura_detailse.dart';
+
 
 
 class Ahadeth extends StatelessWidget {
@@ -48,8 +47,8 @@ class Ahadeth extends StatelessWidget {
                     var hadethName = "الحديث رقم ${index +1}";
                     return InkWell(
                       onTap: (){
-                        screenDetailseArg argument =screenDetailseArg(fileName: "h${index+1}.txt", Name: hadethName);
-                        Navigator.pushNamed(context, hadethDetailse.routename, arguments: argument );
+                        ScreenDetailsArgs argument =ScreenDetailsArgs(fileName: "h${index+1}.txt", Name: hadethName);
+                        Navigator.pushNamed(context, hadethDetailse.routeName, arguments: argument );
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

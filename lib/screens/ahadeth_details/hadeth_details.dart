@@ -6,7 +6,7 @@ import '../app_scaffold/app_scaffold.dart';
 
 class hadethDetailse extends StatefulWidget {
   const hadethDetailse({super.key});
-  static String routename ="suradetailse";
+  static String routeName ="suradetailse";
 
   @override
   State<hadethDetailse> createState() => _hadethDetailseState();
@@ -17,7 +17,7 @@ class _hadethDetailseState extends State<hadethDetailse> {
 
   @override
   Widget build(BuildContext context) {
-    screenDetailseArg arg = ModalRoute.of(context)!.settings.arguments as screenDetailseArg;
+    ScreenDetailsArgs arg = ModalRoute.of(context)!.settings.arguments as ScreenDetailsArgs;
     readhadethFile(arg.fileName);
     return AppScaffold(
       title:arg.Name ,

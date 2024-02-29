@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/app_assets.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_theme.dart';
@@ -20,10 +19,9 @@ class AppScaffold extends StatelessWidget {
       child:  Scaffold(
         backgroundColor:AppColors.transparent ,
         appBar: AppBar(
-          title:  Text(title,style: AppTheme.appBarTextStyle,),
-          backgroundColor:AppColors.transparent ,
-          elevation: 0,
-          centerTitle: true,
+          title:  Text(
+            title,
+        ),
         ),
         bottomNavigationBar: bottomNavigationBar,
         body: body,
@@ -31,6 +29,4 @@ class AppScaffold extends StatelessWidget {
       ),
     );
   }
-
-
 }
