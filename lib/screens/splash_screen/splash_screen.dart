@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islamy/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 import '../../utils/app_assets.dart';
 import '../home_screen/home_screen.dart';
 
@@ -23,8 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = Provider.of(context);
     return Scaffold(
-      body: Image.asset(AppAssets.splash),
+      body: Image.asset(themeProvider.splashScreen),
     );
   }
 }

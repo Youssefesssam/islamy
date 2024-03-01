@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/utils/app_colors.dart';
+import 'package:provider/provider.dart';
+import '../../../../provider/theme_provider.dart';
 import '../../../../utils/app_assets.dart';
 
 class Sebha extends StatefulWidget {
@@ -16,6 +18,7 @@ class Sebha extends StatefulWidget {
   double turns=0.0;
   @override
   Widget build(BuildContext context) {
+    late ThemeProvider themeProvider =Provider.of(context);
     return Column(
         children: [
           GestureDetector(
@@ -29,7 +32,7 @@ class Sebha extends StatefulWidget {
             child: Column(
               children: [
                 AnimatedRotation(turns: turns, duration: const Duration(milliseconds:1 ),
-                  child: Image.asset(AppAssets.sebhaaLogo),),
+                  child: Image.asset(themeProvider.sebhaaLogo),),
               ],
             ),
           ),
@@ -44,7 +47,7 @@ class Sebha extends StatefulWidget {
                     width:80,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color:const Color(0xffb6925f),),
+                      color: themeProvider.primarylight),
                     child: Text("${counter}",
                       style: const TextStyle(fontSize: 40,fontWeight: FontWeight.normal),),) ,
                   const SizedBox(height: 30,),
@@ -54,7 +57,7 @@ class Sebha extends StatefulWidget {
                     width:180,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: AppColors.orange,),
+                      color: themeProvider.tasbeh),
                     child: Column(
                       children: [
                         Text(azckar[i],

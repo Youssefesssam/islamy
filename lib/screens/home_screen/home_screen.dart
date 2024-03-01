@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:islamy/provider/theme_provider.dart';
 import 'package:islamy/screens/home_screen/taps/Ahadeth/ahadeth.dart';
 import 'package:islamy/screens/home_screen/taps/Quran/quran.dart';
 import 'package:islamy/screens/home_screen/taps/sebha/sebha.dart';
 import 'package:islamy/screens/home_screen/taps/radio/radio.dart';
 import 'package:islamy/screens/home_screen/taps/setting/setting.dart';
+import 'package:provider/provider.dart';
 import '../../utils/app_assets.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_localization.dart';
@@ -17,14 +19,16 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   int currentTapIndex = 0;
+  late ThemeProvider themeProvider =Provider.of(context);
   List <Widget> screen =[Quran(),Ahadeth(),Sebha(),Radioo(),SettingTab()];
   Widget currentTab =Quran();
   @override
   Widget build(BuildContext context) {
+    ThemeProvider  themeProvider = Provider.of(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(AppAssets.background)
+              image: AssetImage(themeProvider.mainBackground),
           )
       ),
       child:  Scaffold(
@@ -40,31 +44,28 @@ class _HomeScreenState extends State<HomeScreen> {
   AppBar buildAppBar() {
     return AppBar(
         title:  Text(context.l10n(context).islami,
-          style: AppTheme.appBarTextStyle,),
+          style: AppTheme.appBarTextStyle),
         backgroundColor:AppColors.transparent ,
         elevation: 0,
         centerTitle: true,
       );
-
   }
-
-
   Widget bildBottomNavigation()=> Theme(
-      data: ThemeData(canvasColor: AppColors.orange),
+      data: Theme.of(context).copyWith(canvasColor: Theme.of(context).primaryColor),
       child: BottomNavigationBar(
        items: [
       bottomNavigationBarItem(AppAssets.icQuran,context.l10n(context).quran),
       bottomNavigationBarItem(AppAssets.icAhadeth,context.l10n(context).ahadeth),
       bottomNavigationBarItem(AppAssets.icSebha,context.l10n(context).sebha),
-      bottomNavigationBarItem(AppAssets.icRadio,context.l10n(context).sebha),
+      bottomNavigationBarItem(AppAssets.icRadio,context.l10n(context).radio),
       BottomNavigationBarItem(icon:Icon(Icons.settings,size:30),label: context.l10n(context).setting )
     ],
-        selectedItemColor:AppColors.lightBlack ,
+
         currentIndex: currentTapIndex,
         onTap:(index){
            currentTapIndex=index;
             currentTab = screen[currentTapIndex];
-      setState((){});
+           setState((){});
       } ,
       )
   );

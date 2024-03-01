@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 
 import '../../model/sura_details_arg.dart';
+import '../../provider/theme_provider.dart';
 import '../../utils/app_theme.dart';
 import '../app_scaffold/app_scaffold.dart';
 
 class SuraDetailse extends StatefulWidget {
   static const String routeName = "sura_details";
-  const SuraDetailse({super.key});
+   SuraDetailse({super.key});
+  late ThemeProvider themeProvider ;
 
   @override
   State<SuraDetailse> createState() => _SuraDetailsState();
@@ -17,7 +20,7 @@ class SuraDetailse extends StatefulWidget {
 class _SuraDetailsState extends State<SuraDetailse> {
   String fileContent = "";
   late ScreenDetailsArgs args;
-
+  late ThemeProvider themeProvider =Provider.of(context);
 
   @override
   void initState() {
@@ -43,10 +46,11 @@ class _SuraDetailsState extends State<SuraDetailse> {
 
         padding: EdgeInsets.all(24),
         child: SingleChildScrollView(
-          child: Text(fileContent,
+          child: Text(
+            fileContent,
             textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
-            style: AppTheme.mediumTitleTextStyle,),
+            style: AppTheme.mediumTitleTextStyle, ),
         ),
       ),);
   }

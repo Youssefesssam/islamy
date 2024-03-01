@@ -26,11 +26,13 @@ abstract class AppTheme{
       fontWeight: FontWeight.w600,
       color: AppColors.secondry
   );
+
   static const TextStyle settingOpitionalTitle = TextStyle(
       fontSize: 22,
       fontWeight: FontWeight.normal,
       color: AppColors.secondry
   );
+
   static  ThemeData lightTheme = ThemeData(
   primaryColor: AppColors.primarylight,
   scaffoldBackgroundColor: AppColors.transparent,
@@ -52,9 +54,18 @@ abstract class AppTheme{
           surface:AppColors.transparent ,
           onSurface: AppColors.transparent,
       ),
+    bottomNavigationBarTheme:  const BottomNavigationBarThemeData(
+      selectedItemColor: AppColors.secondry,
+      selectedIconTheme: IconThemeData(size: 36),
+        unselectedItemColor:AppColors.white,
+        unselectedIconTheme:IconThemeData(size: 34)
+    )
     );
+
+
+
   static  ThemeData DarkTheme = ThemeData(
-        primaryColor: AppColors.primarylight,
+        primaryColor: AppColors.primarydark,
         scaffoldBackgroundColor: AppColors.transparent,
         appBarTheme: const AppBarTheme(
           centerTitle:true,
@@ -74,6 +85,11 @@ abstract class AppTheme{
           surface:AppColors.transparent ,
           onSurface: AppColors.transparent,
         ),
-      );
+         bottomNavigationBarTheme:  const BottomNavigationBarThemeData(
+         selectedItemColor: AppColors.secondrydark,
+         selectedIconTheme: IconThemeData(size: 36),
+         unselectedItemColor:AppColors.white,
+         unselectedIconTheme:IconThemeData(size: 34)
+      ));
 
   }

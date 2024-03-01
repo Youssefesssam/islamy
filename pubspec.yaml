@@ -75,6 +75,9 @@ flutter:
    - assets/sebhaa.png
    - assets/quran/
    - assets/hadeth/
+   - assets/dark_bg.png
+   - assets/sebhaDark.png
+   - assets/darkSplashScreen.png
 
 
 
