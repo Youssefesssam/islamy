@@ -39,7 +39,7 @@ late ThemeProvider themeProvider =Provider.of(context);
 
           setState(() {});
         }),
-        bildSettingRow("dark", themeProvider.currentMode==ThemeMode.dark,(newValue){
+        bildSettingRow(context.l10n(context).darkMode, themeProvider.currentMode==ThemeMode.dark,(newValue){
           themeProvider.toggleTheme(newValue);
           activeColor: AppColors.secondrydark;
           setState(() {});
