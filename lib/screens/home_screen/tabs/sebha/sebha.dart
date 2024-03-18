@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/utils/app_colors.dart';
+import 'package:islamy/utils/app_localization.dart';
 import 'package:provider/provider.dart';
 import '../../../../provider/theme_provider.dart';
 import '../../../../utils/app_assets.dart';
@@ -37,10 +38,13 @@ class Sebha extends StatefulWidget {
             ),
           ),
           Expanded(
+
             child: Column(
                 children: [
-                  const Text("عدد التسبيحات",
+                  SizedBox(height: 10,),
+                   Text(context.l10n(context).number_of_praises,
                     style: TextStyle(fontSize: 40,fontWeight: FontWeight.normal),),
+                  SizedBox(height: 10,),
                   Container(
                     alignment: Alignment.center,
                     height:100,

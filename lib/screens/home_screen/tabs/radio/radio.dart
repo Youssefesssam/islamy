@@ -6,13 +6,6 @@ class Radioo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  AppScaffold(
-       title: '',
-        body: Column(
-          children: [
-            Image.asset("assets/radioBackGround.png")
-          ],
-        ),
-    );
+    return Container(child: Image.asset("assets/radioBackGround.png"));
   }
 }

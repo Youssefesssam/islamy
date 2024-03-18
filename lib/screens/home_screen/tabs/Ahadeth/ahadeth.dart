@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/screens/ahadeth_details/hadeth_details.dart';
 import 'package:islamy/utils/app_assets.dart';
+import 'package:islamy/utils/app_localization.dart';
 import 'package:provider/provider.dart';
 import '../../../../model/sura_details_arg.dart';
 import '../../../../provider/theme_provider.dart';
@@ -42,7 +43,7 @@ class _AhadethState extends State<Ahadeth> {
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("Hadeth name",style: themeProvider.mediumTitleTextStyle,)
+              Text(context.l10n(context).hadeth,style: themeProvider.mediumTitleTextStyle,)
 
             ],
           ),
@@ -55,8 +56,9 @@ class _AhadethState extends State<Ahadeth> {
                     var hadethName = "الحديث رقم ${index +1}";
                     return InkWell(
                       onTap: (){
+                        print("ggggg");
                         ScreenDetailsArgs argument =ScreenDetailsArgs(fileName: "h${index+1}.txt", Name: hadethName);
-                        Navigator.pushNamed(context, hadethDetailse.routeName, arguments: argument );
+                        Navigator.pushNamed(context, HadethDetails.routeName, arguments: argument );
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

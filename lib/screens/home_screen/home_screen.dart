@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/provider/theme_provider.dart';
-import 'package:islamy/screens/home_screen/taps/Ahadeth/ahadeth.dart';
-import 'package:islamy/screens/home_screen/taps/Quran/quran.dart';
-import 'package:islamy/screens/home_screen/taps/sebha/sebha.dart';
-import 'package:islamy/screens/home_screen/taps/radio/radio.dart';
-import 'package:islamy/screens/home_screen/taps/setting/setting.dart';
+import 'package:islamy/screens/home_screen/tabs/Ahadeth/ahadeth.dart';
+import 'package:islamy/screens/home_screen/tabs/Quran/quran.dart';
+import 'package:islamy/screens/home_screen/tabs/radio/radio.dart';
+import 'package:islamy/screens/home_screen/tabs/sebha/sebha.dart';
+import 'package:islamy/screens/home_screen/tabs/setting/setting.dart';
 import 'package:provider/provider.dart';
 import '../../utils/app_assets.dart';
 import '../../utils/app_colors.dart';

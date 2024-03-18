@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/model/sura_details_arg.dart';
 import 'package:islamy/utils/app_assets.dart';
-import 'package:islamy/utils/app_colors.dart';
 import 'package:islamy/utils/app_localization.dart';
 import 'package:islamy/utils/constant.dart';
 import 'package:provider/provider.dart';

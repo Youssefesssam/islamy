@@ -1,6 +1,7 @@
 {
 
   "islami"  :  "Islami"   ,
+  "hadeth": "Hadeth name",
   "setting" :  "Setting"  ,
   "darkMode":  "Dark mode",
   "suraName":  "Sura name",
@@ -8,7 +9,8 @@
   "quran"   : "Quran",
   "ahadeth" : "Ahadeth"   ,
   "sebha"   : "sebha",
-  "radio"   : "Radio"
+  "radio"   : "Radio",
+  "number_of_praises": "Number of praises "
 
 
 

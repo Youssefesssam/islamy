@@ -4,15 +4,15 @@ import 'package:islamy/model/sura_details_arg.dart';
 import 'package:islamy/utils/app_theme.dart';
 import '../app_scaffold/app_scaffold.dart';
 
-class hadethDetailse extends StatefulWidget {
-  const hadethDetailse({super.key});
-  static String routeName ="suradetailse";
+class HadethDetails extends StatefulWidget {
+  const HadethDetails({super.key});
+  static String routeName ="hadeth_details";
 
   @override
-  State<hadethDetailse> createState() => _hadethDetailseState();
+  State<HadethDetails> createState() => _HadethDetailsState();
 }
 
-class _hadethDetailseState extends State<hadethDetailse> {
+class _HadethDetailsState extends State<HadethDetails> {
   String fileContent =" ";
 
   @override
